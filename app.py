@@ -18,13 +18,13 @@ def home():
 
 @app.route('/predict_api', methods=['POST'])
 def predict_api():
-    data = request.get_json['data']
+    data = pd.DataFrame(request.files.get())
 
 
-    print(data)
-    print(np.array(list(data.values())).reshape((1,-1)))
-    x = np.array(list(data.values())).reshape((1,-1))
-    data_std = scaler.transform(x)
+    #print(data)
+    #print(np.array(list(data.values())).reshape((1,-1)))
+    #x = np.array(list(data.values())).reshape((1,-1))
+    data_std = scaler.transform(data.values)
     output = reg_model.predict(data_std)
 
     return output
