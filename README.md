@@ -8,6 +8,10 @@
 * git add .
 
 * git status
+* git commit -m "Message"
+
+* git push remote branch
+
 
 
 
